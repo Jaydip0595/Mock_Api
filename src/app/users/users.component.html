@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1>Users</h1>
+    </div>
+    <div class="col-lg-12">
+        <table class="table table-bordered">
+            <tr>
+                
+                <th>No</th>
+                <th>Photo</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mob-no</th>
+                <th>Edit & Remove</th>
+            </tr>
+            
+           
+            <tr *ngFor="let user of users, let i=index">
+                <td>{{ i+1 }}</td>
+                <td> <img src="{{user.avatar}}" class="img-thumbnail"></td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.mobno}}</td>
+                <td>
+                    <button routerLink="user/{{ user.id }}" class="btn btn-outline-primary">Edit </button>
+                    <button (click)="deleteuser(user.id)" class="btn btn-outline-danger">Delete </button>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+</div>
